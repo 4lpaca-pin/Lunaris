@@ -1,0 +1,348 @@
+body {
+  --background: rgb(16, 22, 25);
+  --backgroundnotif: rgba(16, 22, 25, 0.599);
+  --navbackground: rgb(51, 55, 58);
+  --tabbackground: rgba(38, 41, 43, 0.63);
+  --button: rgb(70, 91, 107);
+  --buttonhover: rgb(107, 143, 171);
+  --tabbutton: rgba(57, 61, 64, 0.63);
+  --rightbackground: rgba(58, 60, 62, 0.63);
+  --tabbuttonhov: rgba(89, 91, 94, 0.63);
+  --tabbuttonclick: rgba(132, 135, 139, 0.63);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+  background-color: var(--background);
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: var(--navbackground);
+  height: 35px;
+  z-index: 15;
+  -webkit-app-region: drag;
+  box-shadow: 0px 0px 4px black;
+}
+
+.seli-logo {
+  width: 35px;
+  height: 35px;
+  display: block;
+  position: absolute;
+  left: 2px;
+  user-select: none;
+}
+
+.seli-title {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  left: 37px;
+  font-size: 14px;
+  top: -3px;
+  user-select: none;
+}
+
+.executor-support {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  left: calc(100% + 5px);
+  font-size: 10px;
+  user-select: none;
+  opacity: 0.5;
+  font-style: normal;
+  margin-top: 4px;
+} 
+
+.nav-rig {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.notifier {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.notifier-main {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background: var(--backgroundnotif);
+  z-index: 15;
+  opacity: 1;
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+  padding: 1px 15px;
+  top: 0px;
+  scale: 1;
+  overflow: hidden;
+  left: 0;
+  backdrop-filter: blur(10px);
+  transition: all 0.5s, height 0.65s ease;;
+}
+
+.notifier-main.hide {
+  border-radius: 100px;
+  opacity: 0;
+  max-height: 0px;
+  min-width: 0px;
+  scale: 0.7;
+  left: 100%;
+}
+
+.notifi-tit {
+  color: white;
+  font-size: 1.2em;
+  margin-left: 1px;
+  top: -1px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.notif-sss {
+  top: -10px;
+  position: relative;
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fast-button {
+  background: var(--button);
+  border: none;
+  -webkit-app-region: no-drag;
+  color: rgba(255, 255, 255, 0.672);
+  padding: 5px 5px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  .fa-solid {
+    color: white;
+  };
+  transition: all 0.2s;
+}
+
+.fast-button:hover {
+  color: rgba(255, 255, 255, 0.906);
+  background: var(--buttonhover);
+}
+
+.tabs {
+  position: fixed;
+  left: 0;
+  top: 35px;
+
+  z-index: 3;
+  box-shadow: 0px 0px 4px black;
+  width: 100%;
+  background-color: var(--tabbackground);
+  height: 35px;
+}
+
+.addtab {
+  width: 28px;
+  height: 28px;
+  left: 3px;
+  top: 3px;
+  border-radius: 7px;
+  position: absolute;
+  background: var(--tabbutton);
+  .fa-solid {
+    color: rgba(255, 255, 255, 0.612);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buttonExecutor {
+  background: var(--tabbutton);
+  color: rgba(255, 255, 255, 0.672);
+  padding: 8px 8px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  left: 10px;
+  position: relative;
+  border: solid rgba(96, 103, 107, 0.285) 2px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.buttonExecutor:hover {
+  background: var(--tabbuttonhov);
+}
+
+.buttonExecutor:active {
+  color: rgba(255, 255, 255, 0.9);
+  background: var(--tabbuttonclick);
+}
+
+.bottomframe {
+  position: fixed;
+  bottom: 0;
+  background-color: var(--tabbackground);
+  width: 100%;
+  height: 50px;
+  left: 0;
+  box-shadow: 0px 0px 4px black;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+  
+  .fa-solid {
+    color: rgba(255, 255, 255, 0.612);
+  }
+}
+
+.script-list {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+    gap: 5px;
+    .fast-button {
+      width: calc(100% - 10px);
+      text-align: left;
+      border-radius: 2px;
+    }
+}
+
+.addtab:hover {
+  .fa-solid {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  background: var(--tabbuttonhov);
+}
+
+.tablist {
+  position: absolute;
+  left: 45px;
+  top: 5px;
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: scroll;
+  
+}
+
+.tab-button {
+  background: var(--tabbutton);
+  position: relative;
+  border: none;
+  flex: 1 0 auto;
+  color: rgba(255, 255, 255, 0.672);
+  padding: 5px 5px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  .fa-solid {
+    color: white;
+  };
+  transition: all 0.2s;
+}
+
+.editor-cont {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  height: calc(100% - 120px);
+}
+
+.editor-main {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: calc(100% - 175px);
+  height: 100%;
+}
+
+.editor-script-ez-load {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 175px;
+  background: var(--tabbackground);
+}
+
+.scriptloader {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.693);
+  font-size: 15px;
+  position: absolute;
+  left: 10px;
+  top: -5px;
+  user-select: none;
+}
+
+.tab-button:hover {
+  color: rgba(255, 255, 255, 0.906);
+  background: var(--tabbuttonhov);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 10x;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}

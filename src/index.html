@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title id="headerTitle">?</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <nav>
+      <div>
+        <img src="assets/Seliware.png" class="seli-logo">
+        <h1 class="seli-title">Lunaris <i class="executor-support">/Seliware</i> </h1>
+      </div>
+
+      <div class="nav-rig"> 
+        <button class="fast-button" title="Open API Document" id="exec-doc">
+          <i class="fa-solid fa-book"></i> API Reference
+        </button>
+
+        <button class="fast-button" title="Open Workspace Folder" id="workspace-folder">
+          <i class="fa-solid fa-folder"></i> Workspace
+        </button>
+
+        <button class="fast-button" title="Open Script Folder" id="scripts-folder">
+          <i class="fa-solid fa-scroll"></i> Scripts-List
+        </button>
+
+        <button class="fast-button" title="Open Auto Execute Folder" id="auto-exec-folder">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Auto-Exec
+        </button>
+
+        <button class="fast-button" title="Minimize" id="Minimize">
+          <i class="fa-solid fa-compress"></i>
+        </button>
+
+        <button class="fast-button" title="Close" id="endprocess">
+          <i class="fa-solid fa-x"></i>
+        </button>
+      </div>
+    </nav>
+    <div class="notifier"></div>
+    <div class="tabs">
+      <a class="addtab" title="Add Tab">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+      <div class="tablist"></div>
+    </div>
+
+    <div class="editor-cont">
+      <div id="editors"></div>
+      <div class="editor-script-ez-load">
+        <h1 class="scriptloader">Scripts List</h1>
+        <div class="script-list"></div>
+      </div>
+    </div>
+    <div class="bottomframe">
+      <button class="buttonExecutor" id="executeButton"><i class="fa-solid fa-terminal"></i> Execute</button>
+      <button class="buttonExecutor" id="AttachButton"><i class="fa-solid fa-paper-plane"></i> Attach</button>
+      <button class="buttonExecutor" id="KillRobloxButton"><i class="fa-solid fa-skull"></i> Kill Roblox</button>
+    </div>
+  </body>
+</html>
+<script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
+<script src="ExecutorSystem.js"></script>
+<script src="control.js"></script>
