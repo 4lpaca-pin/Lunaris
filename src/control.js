@@ -51,6 +51,8 @@ const setScriptList = async () => {
 
     button.addEventListener('click',()=>{
       NewNotification("Execute","execute script " + e.name , 1000);
+
+      Execute(e.content);
     })
   });
 };
@@ -230,7 +232,7 @@ require(['vs/editor/editor.main'], function () {
 
       ws.onmessage = (event) => {
         if (event.data == "Injected") {
-          NewNotification("Seliware","Injected to Roblox Process");
+          NewNotification("Seliware","Injected Successfully");
         } else if (event.data == "InjectError") {
           NewNotification("Seliware","Failed to Inject");
         } else if (event.data == "ScriptListChanged") {

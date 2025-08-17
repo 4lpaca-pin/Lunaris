@@ -187,7 +187,9 @@ ipcMain.handle("inject",() => {
         return;
       }
 
-      if (stdout.indexOf("Incompatible Roblox version") || stdout.match("Incompatible Roblox version")) { // roblox version
+      console.log(stdout);
+
+      if (stdout.match("Incompatible Roblox version")) { // roblox version
         return socketClient.send("InjectError");
       }
 
